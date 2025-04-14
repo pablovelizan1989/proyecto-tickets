@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmación de Compra</title>
+    <link rel="icon" href="{{ url_for('static', filename='assets/favicon.ico') }}">
+    <script src="https://kit.fontawesome.com/c538ed8188.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos_vdos.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+<body>
+    <header class="header2">
+        <nav class="navbar navbar-expand-lg navbar-dark colorGris">
+            <div class="container">
+                <a class="navbar-brand" href="{{ url_for('index') }}">
+                    <img src="{{ url_for('static', filename='assets/img/codoacodo.png') }}" alt="Logo" width="100">
+                    Conf. Bs.As.
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav w-100 justify-content-end">
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}#laConferencia">La Conferencia</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}#losOradores">Los Oradores</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}#lugarYfecha">Lugar y La Fecha</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}#convierteteEnOrador">Conviértete en Orador</a></li>
+                        <li class="nav-item"><a class="nav-link colorVerde" href="{{ url_for('comprar') }}">Comprar tickets</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5">
+
+        <!-- ✅ Cartel de confirmación -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }} text-center animate__animated animate__fadeInDown" role="alert">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <!-- ✅ Resumen de la compra -->
+        <div class="card shadow-lg mt-4">
+            <div class="card-body">
+                <h2 class="text-center mb-4"><i class="fa-solid fa-circle-check text-success"></i> ¡Compra Exitosa!</h2>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><strong>Nombre:</strong> {{ nombre }}</li>
+                    <li class="list-group-item"><strong>Email:</strong> {{ email }}</li>
+                    <li class="list-group-item"><strong>Categoría:</strong> {{ categoria.capitalize() }}</li>
+                    <li class="list-group-item"><strong>Cantidad:</strong> {{ cantidad }}</li>
+                    <li class="list-group-item"><strong>Total pagado:</strong> ${{ total | round(2) }}</li>
+                </ul>
+                <div class="text-center mt-4">
+                    <a href="{{ url_for('comprar') }}" class="btn btn-outline-success me-2">
+                        <i class="fa-solid fa-cart-plus"></i> Comprar otro ticket
+                    </a>
+                    <a href="{{ url_for('index') }}" class="btn btn-primary">
+                        <i class="fa-solid fa-house"></i> Volver al inicio
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="footer container-fluid mt-5">
+        <div class="contenedorFooter row text-center">
+            <a class="col" href="#">Preguntas frecuentes</a>
+            <a class="col" href="#">Contáctanos</a>
+            <a class="col" href="#">Prensa</a>
+            <a class="col" href="#">Conferencias</a>
+            <a class="col" href="#">Términos y condiciones</a>
+            <a class="col" href="#">Privacidad</a>
+            <a class="col" href="#">Estudiantes</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

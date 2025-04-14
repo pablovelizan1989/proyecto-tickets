@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Proyecto</title>
+        <!-- favicon-->
+        <link rel="icon" href="{{ url_for('static', filename='assets/favicon.ico') }}">
+        <!--kit de fontawesome-->
+        <script src="https://kit.fontawesome.com/c538ed8188.js" crossorigin="anonymous"></script>
+        <!-- Bootstrap CSS -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos_vdos.css') }}">
+      <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+        
+    </head>
+    <!--sintaxsis de atributo en linea
+    <body style="background-color: rgb(249, 159, 174);">-->
+    <body>
+      <header class="header">
+            <nav class="navbar navbar-expand-lg navbar-dark colorGris">
+                <div class="container">
+                  <a class="navbar-brand" href="#">
+                    <img src="{{ url_for('static', filename='assets/img/codoacodo.png') }}" alt="Logo" width="100"  class="d-inline-block align-text-top">
+                    Conf. Bs.As.
+                  </a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav w-100 justify-content-end">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#laConferencia">La Conferencia</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link"  href="#losOradores">Los Oradores</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#lugarYfecha">Lugar y La Fecha</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#convierteteEnOrador">Conviertete en Orador</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link colorVerde" href="{{ url_for('comprar') }}">Comprar tickets</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+            </nav>
+            <div id="carouselExampleControls" class="carousel slide " data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="d-block1 w-100">
+
+                    </div>
+                    <div class="carousel-caption d-block position-absolute top-50 start-50">
+                    <section class="conferencia">
+                        <h2>Conferencia Bs.As.</h2>
+                        <p>Bs As por primera vez a Argentina. Un evento para compartir con nuestra comunidad del conocimiento y experiencia de los expertos que éstan creando el futuro del internet. Ven a conocer a miembros del evento, a otros alumnos de codo a codo y los oradores del primer nivel que tenemos para ti. Te esperamos!</p>
+                        <div>
+                            <a href="#convierteteEnOrador" class="btn btn-outline-secondary" role="button">Quiero ser orador</a>
+                            <a href="{{ url_for('comprar') }}" type="button" class="btn1 btn-primary btn-lg">Comprar tickets</a>
+                        </div>
+                    </section> 
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="d-block2 w-100 ">
+                        
+                    </div>
+                    <div class="carousel-caption d-block position-absolute top-50 start-50">
+                        <section class="conferencia">
+                        <h2>Conferencia Bs.As.</h2>
+                        <p>Bs As por primera vez a Argentina. Un evento para compartir con nuestra comunidad del conocimiento y experiencia de los expertos que éstan creando el futuro del internet. Ven a conocer a miembros del evento, a otros alumnos de codo a codo y los oradores del primer nivel que tenemos para ti. Te esperamos!</p>
+                        <div>
+                            <a href="#convierteteEnOrador" class="btn btn-outline-secondary" role="button">Quiero ser orador</a>
+                            <a href="./pages/comprar_tickets.html" type="button" class="btn1 btn-primary btn-lg">Comprar tickets</a>
+                        </div>
+                        </section> 
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="d-block3 w-100">
+                        
+                    </div>
+                    <div class="carousel-caption d-block position-absolute top-50 start-50">
+                        <section class="conferencia">
+                        <h2>Conferencia Bs.As.</h2>
+                        <p>Bs As por primera vez a Argentina. Un evento para compartir con nuestra comunidad del conocimiento y experiencia de los expertos que éstan creando el futuro del internet. Ven a conocer a miembros del evento, a otros alumnos de codo a codo y los oradores del primer nivel que tenemos para ti. Te esperamos!</p>
+                        <div>
+                            <a href="#convierteteEnOrador" class="btn btn-outline-secondary" role="button">Quiero ser orador</a>
+                            <a href="./pages/comprar_tickets.html" type="button" class="btn1 btn-primary btn-lg">Comprar tickets</a>
+                        </div>
+                        </section> 
+                    </div>
+                    </div>  
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+      </header>
+      <main>
+            <section id="losOradores" class="container mb-5">
+                <div class="conoceA">
+                <span><p class="parrafoConoce">CONOCE A LOS</p></span><h2 class="h2Oradores" br> ORADORES</h2>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 col-md-4 mb-3">
+                        <div class="card">
+                          <img src="{{ url_for('static', filename='assets/img/steve.jpg') }}" alt="Steve Jobs" class="card-img-top">
+                            <div class="card-body">
+                                <div class="cardtags">
+                                    <h4 class="tituloCardBodyAmarillo small">Javascript</h4>
+                                    <h4 class="tituloCardBodyCeleste small">React</h4>
+                                </div>
+                                <h2>Steve Jobs</h2>
+                                <div class="card-text-container">
+                                  <p class="small">fue un informático y empresario estadounidense, fundador de Apple Computer, una de las empresas más innovadoras del sector tecnológico. Su visión y creatividad revolucionaron los mercados y los hábitos de millones de personas con productos como el iPod, el iPhone y el iPad.</p>
+                            
+                                </div>
+                              </div>  
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-md-4 mb-3">
+                        <div class="card">
+                          <img src="{{ url_for('static', filename='assets/img/bill.jpg') }}" alt="Bill Gates" class="card-img-top">
+                            <div class="card-body">
+                              <div class="cardtags">
+                                <h4 class="tituloCardBodyAmarillo small">Javascript</h4>
+                                <h4 class="tituloCardBodyCeleste small">React</h4>
+                              </div>
+                              <h2>Bill Gates</h2>
+                              <div class="card-text-container">
+                                <p class="small">es un empresario, filántropo e innovador estadounidense. Es el cofundador de Microsoft, la empresa líder en software y tecnología. También es el fundador de la Fundación Bill y Melinda Gates, que se dedica a mejorar la salud y la educación en el mundo. Bill Gates es una de las personas más influyentes y ricas del planeta.</p>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-md-4 mb-3">
+                        <div class="card">
+                          <img src="{{ url_for('static', filename='assets/img/ada.jpeg') }}" alt="Ada" class="card-img-top">
+                            <div class="card-body">
+                              <div class="cardtags">
+                                  <h4 class="tituloCardBodyGris small">Negocios</h4>
+                                  <h4 class="tituloCardBodyRojo small">Startups</h4>
+                              </div>
+                              <h2>Ada Lovelace</h2>
+                              <div class="card-text-container">
+                              <p class="small">Fue una matemática y escritora británica que se destacó por su trabajo en el proyecto de la máquina analítica de Charles Babbage. Se la considera la primera programadora de la historia, ya que escribió el primer algoritmo destinado a ser procesado por una máquina.!</p>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </section>
+            <section id="lugarYfecha" class="container-fluid ">
+                <div class="row">
+                  <div class="col-sm-12 col-md-6 columnaIzq">
+
+                  </div>
+                  <div class="col-sm-12 col-md-6 columnaDer">
+                      <h2>Bs.As - Octubre</h2>
+                      <p>La provincia de Buenos Aires es la más poblada y extensa de Argentina. Su capital es La Plata, una ciudad fundada en 1882 con un diseño urbanístico único. La provincia se divide en 135 partidos, que abarcan desde la región pampeana hasta la costa atlántica. La ciudad de Buenos Aires, que fue su capital hasta 1880, es una entidad autónoma que no forma parte de la provincia, aunque está rodeada por ella. La ciudad de Buenos Aires es el centro político, económico y cultural del país, y una de las metrópolis más importantes de América Latina.</p>
+                      <a href="#convierteteEnOrador" class="btn btn-outline-secondary" role="button">conocé más</a>
+                  </div>
+                </div>
+            </section>
+            <section id="convierteteEnOrador" class="formularioOrador">
+                <div class="conviertete">
+                    <span><p class="parrafoConviertete"> CONVIERTETE EN UN </p></span><h2 class="orador" br> ORADOR</h2> 
+                </div>
+                <p>Anótate como orador para dar una <abbr title="attribute">charla ignite</abbr>. Cuéntanos de qué quieres hablar!</p>
+                <form action="" autocomplete="on">
+                    <div class="nombreYApellido gap-3 w-60">
+                        <input class="form-control form-control-lg" type="text" placeholder="Nombre" aria-label=".form-control-lg example">
+                        <input class="form-control form-control-lg" type="text" placeholder="Apellido" aria-label=".form-control-lg example">
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleFormControlTextarea1" class="form-label"></label>
+                      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Sobre que quieres hablar?"></textarea>
+                    </div>
+                    <p class="recuerda">Recuerda incluir un título para la charla</p>
+                    <div>
+                        <button type="submit" class="btn2 btn-primary w-100">Enviar</button>
+                    </div>
+                </form>
+            </section>
+      </main>
+    
+      <footer class="footer container-fluid mt-5">
+        <div class="contenedorFooter row text-center">
+          <a class="col-sm-12 col-md-3 col-lg-2" href="">Preguntas frecuentes</a>
+          <a class="col-sm-12 col-md-3 col-lg-2" href="">Contáctanos</a>
+          <a class="col-sm-12 col-md-3 col-lg-1" href="">Prensa</a>
+          <a class="col-sm-12 col-md-3 col-lg-2" href="">Conferencias</a>
+          <a class="col-sm-12 col-md-3 col-lg-2" href="">Términos y condiciones</a>
+          <a class="col-sm-12 col-md-3 col-lg-1" href="">Privacidad</a>
+          <a class="col-sm-12 col-md-3 col-lg-2" href="">Estudiantes</a>
+        </div>
+      </footer>
+      <!-- Option 1: Bootstrap Bundle with Popper -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    </body>
+</html>

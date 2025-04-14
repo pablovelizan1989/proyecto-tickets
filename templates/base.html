@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block titulo %}Proyecto{% endblock %}</title>
+    <link rel="icon" href="{{ url_for('static', filename='assets/favicon.ico') }}">
+    <script src="https://kit.fontawesome.com/c538ed8188.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos_vdos.css') }}">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-dark colorGris">
+            <div class="container">
+                <a class="navbar-brand" href="{{ url_for('index') }}">
+                    <img src="{{ url_for('static', filename='assets/img/codoacodo.png') }}" alt="Logo" width="100">
+                    Conf. Bs.As.
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav w-100 justify-content-end">
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}#laConferencia">La Conferencia</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}#losOradores">Los Oradores</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}#lugarYfecha">Lugar y La Fecha</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}#convierteteEnOrador">Conviértete en Orador</a></li>
+                        <li class="nav-item"><a class="nav-link colorVerde" href="{{ url_for('comprar') }}">Comprar tickets</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        {% block contenido %}{% endblock %}
+    </main>
+
+    <footer class="footer container-fluid mt-5">
+        <div class="contenedorFooter row text-center">
+            <a class="col" href="#">Preguntas frecuentes</a>
+            <a class="col" href="#">Contáctanos</a>
+            <a class="col" href="#">Prensa</a>
+            <a class="col" href="#">Conferencias</a>
+            <a class="col" href="#">Términos y condiciones</a>
+            <a class="col" href="#">Privacidad</a>
+            <a class="col" href="#">Estudiantes</a>
+        </div>
+    </footer>
+
+    <!-- ✅ Scripts al final para mejorar rendimiento -->
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/comprar_tickets.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

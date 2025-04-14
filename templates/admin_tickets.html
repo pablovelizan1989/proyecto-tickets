@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Listado de Tickets</title>
+    <link rel="icon" href="{{ url_for('static', filename='assets/favicon.ico') }}">
+    <script src="https://kit.fontawesome.com/c538ed8188.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos_vdos.css') }}">
+</head>
+<body>
+    <header class="header3">
+        <nav class="navbar navbar-expand-lg navbar-dark colorGris">
+            <div class="container">
+                <a class="navbar-brand" href="{{ url_for('index') }}">
+                    <img src="{{ url_for('static', filename='assets/img/codoacodo.png') }}" alt="Logo" width="100">
+                    Conf. Bs.As.
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav w-100 justify-content-end">
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}#laConferencia">La Conferencia</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}#losOradores">Los Oradores</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}#lugarYfecha">Lugar y La Fecha</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}#convierteteEnOrador">Conviértete en Orador</a></li>
+                        <li class="nav-item"><a class="nav-link colorVerde" href="{{ url_for('comprar') }}">Comprar tickets</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mt-5">
+        <h2 class="mb-4 text-center">Listado de Tickets Vendidos</h2>
+
+        <form method="get" class="row g-3 mb-4 align-items-end">
+            <div class="col-md-4">
+                <label for="filtro_categoria" class="form-label">Filtrar por categoría</label>
+                <select name="filtro_categoria" id="filtro_categoria" class="form-select">
+                    <option value="">-- Todas --</option>
+                    <option value="estudiante" {% if request.args.get('filtro_categoria') == 'estudiante' %}selected{% endif %}>Estudiante</option>
+                    <option value="profesional" {% if request.args.get('filtro_categoria') == 'profesional' %}selected{% endif %}>Profesional</option>
+                    <option value="orador" {% if request.args.get('filtro_categoria') == 'orador' %}selected{% endif %}>Orador</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label for="busqueda" class="form-label">Buscar por nombre o correo</label>
+                <input type="text" name="busqueda" id="busqueda" class="form-control" placeholder="Buscar..." value="{{ request.args.get('busqueda', '') }}">
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-primary w-100">Filtrar</button>
+            </div>
+            <div class="col-md-2">
+                <a href="{{ url_for('ver_tickets') }}" class="btn btn-secondary w-100">Quitar filtros</a>
+            </div>
+        </form>
+
+        {% if tickets %}
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                        <th>Categoría</th>
+                        <th>Cantidad</th>
+                        <th>Total</th>
+                        <th>Fecha</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for ticket in tickets %}
+                    <tr>
+                        <td>{{ ticket[0] }}</td>
+                        <td>{{ ticket[1] }}</td>
+                        <td>{{ ticket[2] }}</td>
+                        <td>{{ ticket[3]|capitalize }}</td>
+                        <td>{{ ticket[4] }}</td>
+                        <td>${{ "%.2f"|format(ticket[5]) }}</td>
+                        <td>{{ ticket[6].strftime('%d/%m/%Y %H:%M') }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <div class="alert alert-info text-center">No hay tickets registrados con esos criterios.</div>
+        {% endif %}
+
+        <div class="text-center mt-4">
+            <a href="{{ url_for('index') }}" class="btn btn-secondary">Volver al inicio</a>
+        </div>
+    </main>
+
+    <footer class="footer container-fluid mt-5">
+        <div class="contenedorFooter row text-center">
+            <a class="col" href="#">Preguntas frecuentes</a>
+            <a class="col" href="#">Contáctanos</a>
+            <a class="col" href="#">Prensa</a>
+            <a class="col" href="#">Conferencias</a>
+            <a class="col" href="#">Términos y condiciones</a>
+            <a class="col" href="#">Privacidad</a>
+            <a class="col" href="#">Estudiantes</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

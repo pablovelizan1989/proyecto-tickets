@@ -1,0 +1,304 @@
+/* no va dentro de ningun condicional o media queri y es lo que llamamos escritorio primero
+1400px a mayor*/
+@import url('https://fonts.googleapis.com/css2?family=Alkatra:wght@400;500&family=Anuphan:wght@100;200;300;400;500;600;700&display=swap');
+*{
+    margin: 0; /* margen*/
+    padding: 0; /* relleno*/
+    box-sizing: border-box;/*Tamaño de caja, borde de caja*/
+}
+body{
+    font-family: 'Alkatra', cursive; /*familia de fuente*/
+    font-family: 'Anuphan', sans-serif;
+}
+.header{
+    height: 100vh; /*altura, 100vh es el total de la altura*/
+
+}
+.header2{
+    height:10vh;
+}
+.header3{
+    height: 34vh;
+}
+.Descuento {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 1rem;
+    text-align: center;
+}
+
+.Descuento > div {
+    height: 20vh;
+    width: 8vh;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.colorGris{
+    background-color: rgb(53, 58, 64);
+}
+.navbar-dark .navbar-nav .colorVerde{
+    color: rgb(9, 130, 47);
+}
+.d-block1{
+    height: 90vh;
+    background: linear-gradient(to bottom, #0f0d0fcc ,#1e1b1e7a, #0f0d0fcc) ,url("../assets/img/ba1.jpg");
+}
+.d-block2{
+    height: 90vh;
+    background: linear-gradient(to bottom, #0f0d0fcc ,#1e1b1e7a, #0f0d0fcc) ,url("../assets/img/ba2.jpg");
+}
+.d-block3{
+    height: 90vh;
+    background: linear-gradient(to bottom, #0f0d0fcc ,#1e1b1e7a, #0f0d0fcc) ,url("../assets/img/ba3.jpg");
+}
+.carousel-caption{
+    text-align: right;
+    transform: translateY(-50%);
+}
+.conferencia{
+    flex-direction: column;
+
+}
+.btn{
+    color: white;
+    border: 1px solid white;
+    padding: 0.5rem;
+}
+.btn1 {
+    background-color: rgb(31, 160, 44);
+    text-decoration: none;
+    padding: 0.4rem;
+}
+.conoceA{
+    text-align: center;
+    margin: 1rem;
+}
+.parrafoConoce{
+    margin: 0%;
+}
+h2Oradores{
+    margin: 0%; 
+}
+.card img{
+    width: 100%;
+    height: 500px;
+    object-fit: cover; /*objeto adaptarse cubrir*/
+    border-radius: 5px 5px 0px 0px;
+
+}
+.card-body{
+    color: black;
+    height: 50vh;
+}
+.cardtags{
+    display: flex;
+    margin-top: 1rem;
+    margin-bottom: 0.3rem;
+    
+}
+.tituloCardBodyAmarillo{
+    background-color: rgb(238, 255, 0);
+    border-radius: 2px;
+    margin-right: 0.2rem;
+}
+.tituloCardBodyCeleste{
+    background-color: rgb(0, 128, 145);
+    color: white;
+    border-radius: 2px;
+}   
+.tituloCardBodyGris{
+    background-color: rgb(88, 98, 99);
+    color: white;
+    border-radius: 2px;
+    margin-right: 0.2rem;
+}
+.tituloCardBodyRojo{
+    background-color: rgb(130, 4, 4);
+    color: white;
+    border-radius: 2px;
+
+}
+.columnaIzq{
+    background-image: url(../assets/img/ba3.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 60vh;
+}
+.columnaDer{
+    background-color: rgb(42, 42, 42);
+    color: white;
+    height: 60vh;
+}
+.registro{
+    padding-top: 2rem;
+    height: 15rem;
+}
+.ValorTicket{
+margin-bottom: 1rem;
+
+}
+.categoria-card {
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+.categoria-card:hover {
+    background-color: #f0f8ff;
+    transform: scale(1.02);
+}
+.formularioOrador{
+    width: 50%;
+    height: 49vh;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+.conviertete{
+    text-align: center;
+    margin: 1rem;
+}
+.parrafoConviertete{
+    margin: 0%;
+}
+.orador{
+    margin: 0%;
+}
+.nombreYApellido{
+    display: flex;
+    flex-direction:row;
+    
+}
+.recuerda{
+    text-align: left;
+    color: #6b8593;
+}
+.btn2{
+    height: 3rem;
+    border: 1rem  rgb(163, 202, 23);
+    background-color: rgb(136, 190, 59);
+    border-radius: 0.3rem;
+}
+.Venta{
+    height: 10rem;
+    padding: 0.1rem;
+}
+.Estudiante, .Traine, .Junior {
+    margin: 2rem 0.2rem;
+    padding: 2rem;
+    
+    background:white;
+    transition: background-color 0.7s;
+}
+
+.Estudiante:active{
+    background: linear-gradient(to right, #1d3947 ,#1d4962, #1e5372);
+}
+.Traine:active{
+    background: linear-gradient(to right, #1d3947 ,#1d4962, #1e5372);
+}
+.Junior:active{
+    background: linear-gradient(to right, #1d3947 ,#1d4962, #1e5372);
+}
+
+.footer{
+    background: linear-gradient(to right, #1d3947 ,#1d4962, #1e5372);
+}
+.contenedorFooter{
+    width: 70%;
+    height: 100%;
+    margin: 0 auto;
+    
+}
+.contenedorFooter a{
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    align-self: center;
+    
+}
+.alert-success {
+    font-weight: bold;
+    font-size: 1.1rem;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
+    border: 2px solid #198754;
+}
+
+
+@media screen and (max-width: 567px) {
+.headerNav{
+    background: linear-gradient(to right, #1d3947 ,#1d4962, #1e5372);
+    flex-direction: column;
+    align-items: center;
+    height: initial;
+    padding: 1rem 1rem;
+
+    }  
+    .carousel{
+        height: 30%;
+    }
+    .carousel-caption{
+        right: 3%;
+        left: 3%;
+        bottom: 0.75rem;
+
+    }
+    .conferencia{
+        display: flex;
+    }
+    
+.formularioOrador{
+        height: 85%;
+    }
+    .footer{
+        height: initial;
+
+    }
+}
+@media screen and (min-width: 568px) and (max-width: 767px)  {
+    .headerNav{
+        background: linear-gradient(to right, #1d3947 ,#1d4962, #1e5372);
+        flex-direction: column;
+        align-items: center;
+        height: initial;
+        padding: 1rem 1rem;
+
+    } 
+    .card-img-top {
+        max-height: 150px;
+    } 
+    .card-text-container {
+        max-height: 100px;
+        overflow-y: auto;
+    } 
+    .formularioOrador{
+        height: initial;
+    }
+}   
+@media screen and (min-width: 768px) and (max-width: 991px)  {
+    .headerNav{
+        background: linear-gradient(to right, #1d3947 ,#1d4962, #1e5372);
+        flex-direction: column;
+        align-items: center;
+        height: 20%;
+        padding: 1rem 1rem;
+    } 
+    .formularioOrador{
+        height: initial;
+    }
+    
+}
+@media screen and (min-width: 992px) and (max-width: 1299px)  {
+    .headerNav{
+        padding: 1rem 1 rem;
+        background: linear-gradient(to right, #1d3947 ,#1d4962, #1e5372);
+    }
+    .formularioOrador{
+        height: initial;
+    }
+}
